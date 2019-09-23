@@ -1,0 +1,33 @@
+/*CSS*/
+[data-theme="dark"] {
+  background-color: #222 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .text-black {
+  color: #fff !important;
+}
+
+[data-theme="dark"] .text-light {
+  color: #000!important;
+}
+
+[data-theme="dark"] .bg-accordion-light {
+  background-color: #444 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #444 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] .card-border{
+  border: 1px solid #6e6e6e;
+}
