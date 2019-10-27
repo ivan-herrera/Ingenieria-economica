@@ -1,0 +1,267 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anualidad Vencida</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Estilo CSS-->
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--JS-->
+    <script src="../js/lineal-creciente.js"></script>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body class="bg-white text-center d-flex h-100">
+    <div class="container d-flex p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <h3 class="float-left">Lineal creciente</h3>
+            <nav class="nav justify-content-center float-right">
+                    <a class="nav-link active" href="../../index.html">Inicio</a>
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                    <div class="nav-link">
+            
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                        <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                    </div>
+                        
+                    <!-- You must load 'dark-mode-switch.js' after the dark-mode switchh -->
+                    <script src="../js/dark-mode-switch.min.js"></script>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <div>
+                <a href="gradientes.html" class="btn btn-outline-primary float-left"><i class="fas fa-arrow-left"></i> Volver</a>
+                <br><br>
+            </div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="card bg-accordion-light">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="collapseOne">
+                                Calcular Valor presente
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <!--Inicio del contenido del acordeon #1-->
+                        <div class="card-body">
+                            <div class="container p-4" style="width: 50%;">
+                                <div id="notificacionVP" class="alert alert-warning" role="alert">
+                                    <p id="resultadoVP"></p>
+                                </div>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="anualidad">Anualidad (A)</label>
+                                                <input type="number" id="anualidad" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gradiente">Gradiente (G)</label>
+                                                <input type="number" id="gradiente" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tasaInteres">Tasa de interés</label>
+                                                <input type="number" id="tasaInteres" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tiempo">Pagos/Cuotas (Meses)</label>
+                                                <input type="number" id="tiempo" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <button type="button" id="button-calcular" onclick="calcularValorPresente()" class="btn btn-block btn-success">Calcular <i class="fas fa-calculator"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <button type="button" onclick="limpiarVP()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin del contenido del acordeon #1-->
+                    </div>
+                </div>
+
+                    <div class="card bg-accordion-light">
+                        <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Calcular Valor futuro
+                            </button>
+                        </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <!--Inicio del contenido del acordeon #3-->
+                                <div class="container p-4" style="width: 50%;">
+                                <div id="notificacionVF" class="alert alert-warning" role="alert">
+                                    <p id="resultadoVF"></p>
+                                </div>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="anualidadVF">Anualidad</label>
+                                                <input type="number" id="anualidadVF" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gradienteVF">Gradiente</label>
+                                                <input type="number" id="gradienteVF" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tasaInteres">Tasa de interés</label>
+                                                <input type="number" id="tasaInteresVF" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tiempoVF">Cantidad de cuotas (Mes)</label>
+                                                <input type="number" id="tiempoVF" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <button type="button" id="button-calcular" onclick="calcularValorFuturo()" class="btn btn-block btn-success">Calcular <i class="fas fa-calculator"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <button type="button" onclick="limpiarVF()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fin del contenido del acordeon #3-->
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-accordion-light">
+                        <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Calcular Anualidad
+                            </button>
+                        </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <!--Inicio del contenido del acordeon #5-->
+                                <div class="container p-4" style="width: 50%;">
+                                <div id="notificacionA" class="alert alert-warning" role="alert">
+                                    <p id="alertitaA"></p>
+                                </div>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="valorFuturoA">Valor futuro</label>
+                                                <input type="number" id="valorFuturoA" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gradienteA">Gradiente</label>
+                                                <input type="number" id="gradienteA" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tasaInteresA">Tasa de interes</label>
+                                                <input type="number" id="tasaInteresA" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tiempoTI">Cantidad de pagos (Mes)</label>
+                                                <input type="number" id="tiempoA" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <button type="button" id="button-calcular" onclick="calcularAnualidadVF()" class="btn btn-block btn-success">Calcular <i class="fas fa-calculator"></i></button>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <button type="button" onclick="limpiarAVF()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fin del contenido del acordeon #5-->
+                        </div>
+                        </div>
+                    </div>
+
+                <div class="card bg-accordion-light">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Calcular Pagos/Cuotas
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <!--Inicio del contenido del acordeon #2-->
+                        <div class="container p-4" style="width: 50%;">
+                            <!--Notificacion con el resultado-->
+                            <div id="notificacionC" class="alert alert-warning" role="alert">
+                                <p id="alertitaC"></p>
+                            </div>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="valorPresenteTI">Anualidad</label>
+                                            <input type="number" id="anualidadC" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valorFuturoTI">Gradiente</label>
+                                            <input type="number" id="gradienteC" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tasaInteresT">Cuota especifica</label>
+                                            <input type="number" id="cuota" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <button type="button" id="button-calcularVF" onclick="calcularCuota()" class="btn btn-block btn-success">Calcular <i class="fas fa-calculator"></i></button>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <button type="button" id="button-limpiarVF" onclick="limpiarC()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin del contenido del acordeon #2-->
+                    </div>    
+                </div>
+
+                
+
+            </div>
+        </section>
+
+        <footer class="mt-auto container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2019 Ivan Andres Herrera Pertuz, Ing de Sistemas. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Términos</a></p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
