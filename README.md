@@ -4,4 +4,8 @@
 
 ### Siente te libre de descargar el proyecto para uso educativo. 
 
-#### Tecnologias utilizadas: HTML, CSS, JavaScript Bootstrap 4.
+#### Tecnologias utilizadas:
+-HTML
+-CSS
+-JavaScript
+-Bootstrap 4.
