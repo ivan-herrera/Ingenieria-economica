@@ -59,6 +59,23 @@ function calcularAnualidadVP(){
     document.getElementById("notificacionA").style.display = "block";
 }
 
+function calcularAnualidadVF(){
+    var valorFuturo, tasaInteres, tiempo;
+
+    valorFuturo = document.getElementById("valorFuturoAVF").value;
+    tasaInteres = document.getElementById("tasaInteresAVF").value;
+    tiempo = document.getElementById("tiempoAVF").value;
+
+    base = parseInt(1) + parseFloat(tasaInteres);
+    elevado = Math.pow(base, tiempo);
+    divisor = parseFloat(tasaInteres) * elevado;
+
+    result = Math.round(parseFloat((valorFuturo)*((parseFloat(tasaInteres))/(elevado - parseInt(1)))));
+
+    document.getElementById("alertitaAVF").innerHTML =  new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(result) + "</em>";
+    document.getElementById("notificacionT").style.display = "block";
+}
+
 
 function calcularTiempo(){
     var anualidad, valorFuturo, tasaInteres, result;
@@ -76,6 +93,7 @@ function calcularTiempo(){
     document.getElementById("alertitaT").innerHTML = result + "</em> meses";
     document.getElementById("notificacionC").style.display = "block";
 }
+
 
 
 function limpiarVP(){

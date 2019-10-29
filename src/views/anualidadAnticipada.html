@@ -18,7 +18,7 @@
 <body class="bg-white text-center d-flex h-100">
     <div class="container d-flex p-3 mx-auto flex-column">
         <header class="mb-auto">
-            <h3 class="float-left">Anualidad Vencida</h3>
+            <h3 class="float-left">Anualidad Anticipada</h3>
             <nav class="nav justify-content-center float-right">
                     <a class="nav-link active" href="../../index.html">Inicio</a>
                     <a class="nav-link" href="./contacto.html">Contacto</a>
@@ -143,7 +143,7 @@
                     <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Calcular Anualidad
+                            Calcular Anualidad con Valor Presente
                         </button>
                     </h2>
                     </div>
@@ -176,6 +176,55 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <button type="button" onclick="limpiarA()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin del contenido del acordeon #3-->
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card bg-accordion-light">
+                    <div class="card-header" id="headingSix">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Calcular Anualidad con Valor Futuro
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!--Inicio del contenido del acordeon #3-->
+                            <div class="container p-4" style="width: 50%;">
+                            <div id="notificacionAVFV" class="alert alert-warning" role="alert">
+                                <p id="resultadoAVFV"></p>
+                            </div>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="valorFuturoAVF">Valor futuro (VF)</label>
+                                            <input type="number" id="valorFuturoAVFV" name="valorFuturoAVF" class="form-control" placeholder="Ingrese el valor presente" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tasaInteresAVF">Tasa de interes (Decimal)</label>
+                                            <input type="number" id="tasaInteresAVFV" name="tasaInteresAVF" class="form-control" placeholder="Ingrese el valor futuro" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tiempoAVF">Tiempo (meses)</label>
+                                            <input type="number" id="tiempoAVFV" name="tiempoAVF" class="form-control" placeholder="Ingrese el tiempo" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <button type="button" id="button-calcular" onclick="calcularAnualidadVF()" class="btn btn-block btn-success">Calcular <i class="fas fa-calculator"></i></button>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <button type="button" onclick="limpiarAVFV()" class="btn btn-outline-danger">Limpiar <i class="fas fa-trash-alt"></i></button>
                                                 </div>
                                             </div>
                                         </div>

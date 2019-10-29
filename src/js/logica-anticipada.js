@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log( "ready!" );
     document.getElementById("notificacionVP").style.display='none';
+    document.getElementById("notificacionAVFV").style.display = "none";
     document.getElementById("notificacionVF").style.display='none';
     document.getElementById("notificacionA").style.display = "none";
     document.getElementById("notificacionC").style.display = "none";
@@ -57,6 +58,30 @@ function calcularAnualidadVP(){
 
     document.getElementById("alertitaTI").innerHTML =  new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(result) + "</em>";
     document.getElementById("notificacionA").style.display = "block";
+}
+
+function calcularAnualidadVF(){
+    var valorFuturo, tasaInteres, tiempo;
+
+    valorFuturo = document.getElementById("valorFuturoAVFV").value;
+    tasaInteres = document.getElementById("tasaInteresAVFV").value;
+    tiempo = document.getElementById("tiempoAVFV").value;
+
+    base = parseInt(1) + parseFloat(tasaInteres);
+    elevado = Math.pow(base, tiempo);
+    divisor = parseFloat(tasaInteres) * elevado;
+
+    a = parseInt(valorFuturo);
+    b = parseFloat(elevado)*parseFloat(base)-parseInt(1);
+    c = tasaInteres;
+
+    r = a/(b/c);
+
+    result = Math.round(parseFloat(r));
+
+    document.getElementById("resultadoAVFV").innerHTML =  new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(result) + "</em>";
+    document.getElementById("notificacionAVFV").style.display = "block";
+
 }
 
 
@@ -126,6 +151,14 @@ function limpiarT(){
     document.getElementById("tiempoAVF").value = "";
     document.getElementById("alertitaAVF").innerHTML = "";
 
+}
+
+function limpiarAVFV(){
+    document.getElementById("valorFuturoAVFV").value = "";
+    document.getElementById("tasaInteresAVFV").value = "";
+    document.getElementById("tiempoAVFV").value = "";
+    document.getElementById("resultadoAVFV").innerHTML = "";
+    document.getElementById("notificacionAVFV").style.display = "none";
 }
 
 function limpiarTI(){
