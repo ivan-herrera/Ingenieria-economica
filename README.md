@@ -10,4 +10,4 @@ Siente te libre de descargar el proyecto para uso educativo.
 - JavaScript
 - Bootstrap 4.
 
-#### Realizado por estudiantes de la Corporacion Universitaria del Caribe CECAR
+#### Realizado por estudiante de la Corporacion Universitaria del Caribe CECAR
