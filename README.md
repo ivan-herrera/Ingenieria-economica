@@ -10,4 +10,8 @@ Siente te libre de descargar el proyecto para uso educativo.
 - JavaScript
 - Bootstrap 4.
 
+### Capturas 
+
+![Screenshot de calculadora](docs/Captura web_13-6-2022_122343_ivan-herrera.github.io.jpeg)
+
 #### Realizado por estudiante de la Corporacion Universitaria del Caribe CECAR
