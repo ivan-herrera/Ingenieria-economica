@@ -20,6 +20,6 @@ Las calculadoras esta maquetadas a partir de formularios `HTML` validados antes 
 - Bootstrap 4.
 
 #### Realizado por estudiante de la Corporacion Universitaria del Caribe CECAR
-[Sígueme en Twitter](https://twitter.com/G2Pertu)
-[Sígueme en Linkedin](https://www.linkedin.com/in/ivan-andres-herrera-pertuz-a81383222)
-[Sígueme en Instagram](https://www.instagram.com/ivanherrera.27)
+- [Sígueme en Twitter](https://twitter.com/G2Pertu)
+- [Sígueme en Linkedin](https://www.linkedin.com/in/ivan-andres-herrera-pertuz-a81383222)
+- [Sígueme en Instagram](https://www.instagram.com/ivanherrera.27)
