@@ -8,8 +8,9 @@ Siente te libre de descargar el proyecto para uso educativo.
 
 Vista previa de la aplicación.
 
-![Screenshot de menu princial](docs/back-white.png)
-![Screenshot de calculadora](docs/calculadora.pejg)
+Entre sus funciones, la aplicación cuenta con calculadora para `interes simple`, `interes compuesto`, `anualidades` y `gradientes`. También, tiene soporte para cambiar entre modos `Light` y `Dark`.
+![Screenshot de menu princial](docs/black-white.png)
+![Screenshot de calculadora](docs/calcular.jpeg)
 
 #### Tecnologias utilizadas:
 - HTML
