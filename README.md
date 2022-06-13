@@ -10,6 +10,7 @@ Vista previa de la aplicación.
 
 Entre sus funciones, la aplicación cuenta con calculadora para `interes simple`, `interes compuesto`, `anualidades` y `gradientes`. También, tiene soporte para cambiar entre modos `Light` y `Dark`.
 ![Screenshot de menu princial](docs/black-white.png)
+Las calculadoras esta maquetadas a partir de formularios `HTML` validados antes de ejecutar los calculos.
 ![Screenshot de calculadora](docs/calcular.jpeg)
 
 #### Tecnologias utilizadas:
